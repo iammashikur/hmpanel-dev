@@ -1,0 +1,960 @@
+{
+    "info": {
+      "name": "Laravel API Collection",
+      "description": "API collection for Laravel application management system",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": [
+        {
+          "key": "token",
+          "value": "{{bearer_token}}",
+          "type": "string"
+        }
+      ]
+    },
+    "variable": [
+      {
+        "key": "base_url",
+        "value": "http://localhost:8000",
+        "type": "string"
+      }
+    ],
+    "item": [
+      {
+        "name": "Authentication",
+        "item": [
+          {
+            "name": "Login",
+            "request": {
+              "method": "POST",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/login",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "login"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"password123\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Users",
+        "item": [
+          {
+            "name": "List Users",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/users",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "users"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Create User",
+            "request": {
+              "method": "POST",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/users",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "users"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"password\": \"password123\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Show User",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/users/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "users",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update User",
+            "request": {
+              "method": "PUT",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/users/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "users",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"John Doe Updated\",\n    \"email\": \"john.updated@example.com\",\n    \"password\": \"newpassword123\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Delete User",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/users/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "users",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Technologies",
+        "item": [
+          {
+            "name": "List Technologies",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/technologies",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "technologies"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Create Technology",
+            "request": {
+              "method": "POST",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/technologies",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "technologies"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"PHP\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Show Technology",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/technologies/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "technologies",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Technology",
+            "request": {
+              "method": "PUT",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/technologies/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "technologies",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"PHP Updated\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Delete Technology",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/technologies/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "technologies",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Technology Versions",
+        "item": [
+          {
+            "name": "List Technology Versions",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/technology-versions",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "technology-versions"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Create Technology Version",
+            "request": {
+              "method": "POST",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/technology-versions",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "technology-versions"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"version\": \"8.1\",\n    \"technology_id\": 1\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Show Technology Version",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/technology-versions/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "technology-versions",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Technology Version",
+            "request": {
+              "method": "PUT",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/technology-versions/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "technology-versions",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"version\": \"8.2\",\n    \"technology_id\": 1\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Delete Technology Version",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/technology-versions/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "technology-versions",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Databases",
+        "item": [
+          {
+            "name": "List Databases",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/databases",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "databases"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Create Database",
+            "request": {
+              "method": "POST",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/databases",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "databases"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"Main Database\",\n    \"password\": \"database123\",\n    \"user_id\": 1\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Show Database",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/databases/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "databases",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Database",
+            "request": {
+              "method": "PUT",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/databases/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "databases",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"Main Database Updated\",\n    \"password\": \"newpassword123\",\n    \"user_id\": 1\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Delete Database",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/databases/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "databases",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Applications",
+        "item": [
+          {
+            "name": "List Applications",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/applications",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "applications"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Create Application",
+            "request": {
+              "method": "POST",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/applications",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "applications"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"My App\",\n    \"technology_id\": 1,\n    \"technology_version_id\": 1,\n    \"domain\": \"myapp.com\",\n    \"directory\": \"/var/www/myapp\",\n    \"database_id\": 1,\n    \"user_id\": 1\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Show Application",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/applications/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "applications",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Application",
+            "request": {
+              "method": "PUT",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/applications/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "applications",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"My App Updated\",\n    \"technology_id\": 1,\n    \"technology_version_id\": 1,\n    \"domain\": \"myapp-updated.com\",\n    \"directory\": \"/var/www/myapp-updated\",\n    \"database_id\": 1,\n    \"user_id\": 1\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Delete Application",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/applications/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "applications",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Connection Types",
+        "item": [
+          {
+            "name": "List Connection Types",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/connection-types",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "connection-types"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Create Connection Type",
+            "request": {
+              "method": "POST",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/connection-types",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "connection-types"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"SSH\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Show Connection Type",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/connection-types/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "connection-types",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Connection Type",
+            "request": {
+              "method": "PUT",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/connection-types/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "connection-types",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"SSH Updated\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Delete Connection Type",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/connection-types/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "connection-types",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Connections",
+        "item": [
+          {
+            "name": "List Connections",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/connections",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "connections"
+                ]
+              }
+            }
+          },
+          {
+            "name": "Create Connection",
+            "request": {
+              "method": "POST",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/connections",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "connections"
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"Production SSH\",\n    \"username\": \"deploy\",\n    \"password\": \"password123\",\n    \"access_token\": null,\n    \"ip\": \"192.168.1.1\",\n    \"port\": \"22\",\n    \"connection_type_id\": 1,\n    \"application_id\": 1,\n    \"user_id\": 1\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Show Connection",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/connections/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "connections",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "Update Connection",
+            "request": {
+              "method": "PUT",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/connections/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "connections",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\n    \"name\": \"Production SSH Updated\",\n    \"username\": \"deploy-updated\",\n    \"password\": \"newpassword123\",\n    \"access_token\": null,\n    \"ip\": \"192.168.1.2\",\n    \"port\": \"2222\",\n    \"connection_type_id\": 1,\n    \"application_id\": 1,\n    \"user_id\": 1\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "Delete Connection",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/connections/:id",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "connections",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "1"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
