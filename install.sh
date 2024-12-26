@@ -4,7 +4,7 @@
 
 PASS=password
 DBPASS=password
-REPO=iammashikur/hmpanel
+REPO=iammashikur/hmpanel-dev
 if [ -z "$1" ];
     BRANCH=latest
 then
